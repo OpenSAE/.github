@@ -46,10 +46,3 @@ Our research program grows through new theoretical results, empirical studies, e
 We share research methods, reproducible implementations, evaluation protocols, and tutorials to support rigorous study of learned representations. Clear definitions, systematic baselines, and controlled experiments guide our work.
 
 Explore the project repositories for code, documentation, examples, and opportunities to contribute.
-
----
-
-<p align="center">
-  <strong>From learned features to faithful explanations.</strong><br />
-  Explore our projects, share research ideas, or connect for collaboration at <a href="mailto:hma232@wisc.edu">hma232@wisc.edu</a>.
-</p>
