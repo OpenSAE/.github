@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="[https://raw.githubusercontent.com/OpenSAE/.github/main/opensae_banner.png](https://github.com/OpenSAE/.github/main/opensae_banner.png)" alt="OpenSAE — From learned features to faithful explanations" width="100%" />
+  <img src="https://github.com/OpenSAE/.github/main/opensae_banner.png" alt="OpenSAE — From learned features to faithful explanations" width="100%" />
 </p>
 
 <p align="center">
