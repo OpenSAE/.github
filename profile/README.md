@@ -16,12 +16,15 @@ Sparse autoencoders are a central starting point, connecting our work to broader
 
 ## Research Directions
 
-| Direction | Focus |
-| :--- | :--- |
-| **Representation Structure** | What neural networks represent and how features are organized. |
-| **Behavior and Intervention** | How internal components and their interactions influence behavior. |
-| **Context and Generalization** | How representations change or persist across contexts. |
-| **Evaluation and Reliability** | How to rigorously test explanations and interventions. |
+At OpenSAE, we study how neural networks represent information and how those representations shape model behavior. Our research focuses on:
+
+- Understanding what learned features represent and how they are organized within neural networks.
+
+- Investigating how individual features and their interactions influence model behavior.
+
+- Studying how representations change across inputs and contexts, and what remains consistent.
+
+- Developing tools and rigorous evaluations to test the reliability of explanations and interventions.
 
 ## Research & Infrastructure
 
