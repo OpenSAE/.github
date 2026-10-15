@@ -44,6 +44,6 @@ At OpenSAE, we study how neural networks represent information and how those rep
 
     Shows that SAE features can look simple while depending on many interacting inputs.
 
-## Open Science
+## Opportunities
 
-We share research, code, evaluation protocols, and tools to support an open, rigorous, and reproducible understanding of neural networks.
+We share research, code, evaluation protocols, and tools to support an open, rigorous, and reproducible understanding of LLMs. If you're interested in our research and would like to join OpenSAE, please contact us at hma232@wisc.edu.
