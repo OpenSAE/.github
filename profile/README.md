@@ -25,12 +25,21 @@ Sparse autoencoders are a central starting point, connecting our work to broader
 
 ## Research & Infrastructure
 
-| Project | Focus |
-| :--- | :--- |
-| **[SAEBase](https://github.com/OpenSAE/SAEBase)** | Open infrastructure for SAE evaluation, feature interventions, and reproducible research. |
-| **[SAR — Behavioral Compositionality](https://github.com/OpenSAE/SAE-Behavioral-Compositionality)** | Understanding how feature interactions shape model behavior. |
-| **[RSS — Representation Redistribution](https://github.com/OpenSAE/Redistribution-Sensitivity-Score)** | Studying structured changes in representations across contexts. |
-| **[SAE Input Localization](https://github.com/OpenSAE/SAE-Input-Localization)** | Measuring feature dependencies on controlled inputs through optimal input scope curves and paired interventions. |
+- 🧱 [**SAEBase**](https://github.com/OpenSAE/SAEBase)
+
+    Research infrastructure for understanding, testing, and modifying SAE features in LLMs.
+
+- 🧩 [**Behavioral Compositionality of Sparse Autoencoder Representations**](https://github.com/OpenSAE/SAE-Behavioral-Compositionality)
+
+    Measures how much model behavior depends on interactions among its SAE features.
+
+- 🔀 [**Representation Redistribution in Sparse Autoencoders**](https://github.com/OpenSAE/Redistribution-Sensitivity-Score)
+
+    Detects consistent shifts in SAE feature activity when the same request is presented differently.
+
+- 🧭 [**Sparse Autoencoders Do Not Guarantee Local Features**](https://github.com/OpenSAE/SAE-Input-Localization)
+
+    Shows that SAE features can look simple while depending on many interacting inputs.
 
 ## Open Science
 
