@@ -1,0 +1,61 @@
+name: Community standards
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  community-health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install YAML validator
+        run: python -m pip install "PyYAML>=6,<7"
+      - name: Validate documentation and GitHub issue forms
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+
+          required = [
+              "CONTRIBUTING.md", "CODE_OF_CONDUCT.md", "SECURITY.md",
+              "SUPPORT.md", "GOVERNANCE.md",
+              ".github/PULL_REQUEST_TEMPLATE.md",
+          ]
+          for name in required:
+              path = Path(name)
+              assert path.is_file() and path.stat().st_size > 60, name
+
+          forms = sorted(Path(".github/ISSUE_TEMPLATE").glob("*.yml"))
+          assert {p.name for p in forms} == {
+              "bug_report.yml", "feature_request.yml",
+              "model_sae_support.yml", "config.yml",
+          }
+          for path in forms:
+              doc = yaml.safe_load(path.read_text(encoding="utf-8"))
+              assert isinstance(doc, dict), path
+              if path.name == "config.yml":
+                  assert isinstance(doc.get("blank_issues_enabled"), bool)
+                  continue
+              assert isinstance(doc.get("name"), str) and doc["name"]
+              assert isinstance(doc.get("description"), str) and doc["description"]
+              fields = doc.get("body")
+              assert isinstance(fields, list) and fields
+              ids = set()
+              for field in fields:
+                  assert field.get("type") in {"textarea", "input", "dropdown", "checkboxes", "markdown"}
+                  assert isinstance(field.get("attributes"), dict)
+                  if field["type"] != "markdown":
+                      assert field.get("id") not in ids
+                      assert field.get("id")
+                      ids.add(field["id"])
+                      assert field["attributes"].get("label")
+          print("Community documents and four GitHub issue templates valid")
+          PY
