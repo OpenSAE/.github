@@ -1,0 +1,24 @@
+name: Bug report
+description: Report a reproducible error in an OpenSAE repository
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Provide the smallest reproducible command, input, and error output. Do not include credentials or private data.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Python, relevant library versions, device, and commit if applicable.
+    validations:
+      required: false

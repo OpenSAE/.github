@@ -1,0 +1,24 @@
+name: Feature request
+description: Propose an improvement to research code, tools, or documentation
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Explain the research or engineering task you cannot complete today.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Explain the smallest useful change and how someone would use it.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or related work
+      description: Add relevant implementations, references, or existing issues when useful.
+    validations:
+      required: false

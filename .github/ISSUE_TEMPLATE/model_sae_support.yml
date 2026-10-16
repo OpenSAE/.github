@@ -1,0 +1,39 @@
+name: Model or SAE support
+description: Propose a model, SAE checkpoint, layer, or hook integration
+body:
+  - type: input
+    id: model
+    attributes:
+      label: Base model
+      description: Exact model repository and revision when known.
+      placeholder: organization/model-name at revision
+    validations:
+      required: true
+  - type: input
+    id: sae
+    attributes:
+      label: SAE checkpoint source
+      description: Exact public checkpoint repository, file or revision.
+    validations:
+      required: true
+  - type: textarea
+    id: site
+    attributes:
+      label: Architecture and activation site
+      description: SAE type, width, normalization, expected layer, hook, and dimensions.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Existing verification and environment
+      description: Explain what was actually run, device and dtype, and attach public logs or commands where available.
+    validations:
+      required: false
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Upstream attribution and access
+      description: Paper, source revision, checkpoint license, access requirements, and links.
+    validations:
+      required: true
