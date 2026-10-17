@@ -80,3 +80,37 @@ jobs:
               except Exception as error:
                   print("ERROR", type(error).__name__, str(error)[:1000], flush=True)
           PY
+
+      - name: Render public page screenshots
+        shell: bash
+        run: |
+          set -euo pipefail
+          CHROME="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
+          echo "CHROME_PATH=$CHROME"
+          if [ -z "$CHROME" ]; then
+            echo "CHROME_NOT_INSTALLED; screenshots skipped"
+            exit 0
+          fi
+          mkdir -p /tmp/hf-public-screenshots
+          "$CHROME" --headless --no-sandbox --disable-dev-shm-usage --disable-gpu --hide-scrollbars --window-size=1440,1150 --virtual-time-budget=8000 --screenshot=/tmp/hf-public-screenshots/org.png https://huggingface.co/OpenSAE 2>/tmp/chrome1.err || true
+          "$CHROME" --headless --no-sandbox --disable-dev-shm-usage --disable-gpu --hide-scrollbars --window-size=1440,1150 --virtual-time-budget=8000 --screenshot=/tmp/hf-public-screenshots/saebase.png https://huggingface.co/spaces/OpenSAE/SAEBase 2>/tmp/chrome2.err || true
+          python3 -m pip install --quiet pillow
+          python3 - <<'PY'
+          import base64
+          from pathlib import Path
+          from PIL import Image
+          import io
+          for name in ("org", "saebase"):
+              src = Path(f"/tmp/hf-public-screenshots/{name}.png")
+              if not src.is_file():
+                  print(f"SCREENSHOT_FAILED {name}", flush=True)
+                  continue
+              image = Image.open(src).convert("RGB")
+              image.thumbnail((1050, 900))
+              out = io.BytesIO()
+              image.save(out, format="JPEG", quality=47, optimize=True)
+              encoded = base64.b64encode(out.getvalue()).decode("ascii")
+              print(f"BEGIN_SCREENSHOT {name} {image.size[0]}x{image.size[1]} {len(encoded)}", flush=True)
+              print(encoded, flush=True)
+              print(f"END_SCREENSHOT {name}", flush=True)
+          PY
