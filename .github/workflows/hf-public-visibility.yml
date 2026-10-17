@@ -114,3 +114,35 @@ jobs:
               print(encoded, flush=True)
               print(f"END_SCREENSHOT {name}", flush=True)
           PY
+
+      - name: Snapshot exact public Space files
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          urls = {
+              "spaces/README/README.md": "https://huggingface.co/spaces/OpenSAE/README/resolve/main/README.md",
+              "spaces/README/index.html": "https://huggingface.co/spaces/OpenSAE/README/resolve/main/index.html",
+              "spaces/SAEBase/README.md": "https://huggingface.co/spaces/OpenSAE/SAEBase/resolve/main/README.md",
+              "spaces/SAEBase/index.html": "https://huggingface.co/spaces/OpenSAE/SAEBase/resolve/main/index.html",
+              "spaces/SAEBase/app.js": "https://huggingface.co/spaces/OpenSAE/SAEBase/resolve/main/app.js",
+              "spaces/SAEBase/styles.css": "https://huggingface.co/spaces/OpenSAE/SAEBase/resolve/main/styles.css",
+              "spaces/SAEBase/data/sites.json": "https://huggingface.co/spaces/OpenSAE/SAEBase/resolve/main/data/sites.json",
+          }
+          for path, url in urls.items():
+              request = Request(url, headers={"User-Agent": "Mozilla/5.0 OpenSAE-read-only-public-audit"})
+              with urlopen(request, timeout=20) as response:
+                  body = response.read(2_500_000)
+                  assert response.status == 200, (path, response.status)
+              dest = Path("hf-live-baseline") / path
+              dest.parent.mkdir(parents=True, exist_ok=True)
+              dest.write_bytes(body)
+              print("SAVED", path, len(body), hashlib.sha256(body).hexdigest())
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hf-live-baseline
+          path: hf-live-baseline
+          retention-days: 2
