@@ -1,0 +1,45 @@
+name: Academic website source snapshot
+on:
+  push:
+    branches: [diagnostics/hf-public-visibility-20261016]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout public academic site at verified main commit
+        uses: actions/checkout@v4
+        with:
+          repository: AtheavenMa/AtheavenMa.github.io
+          ref: 137891feb18fe07d5abe04215b29dc40d8999d58
+          path: site
+          persist-credentials: false
+      - name: Package relevant site sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          tar -czf academic-site-baseline.tar.gz -C site \
+            _pages/about.md \
+            _pages/cv.md \
+            _data/cv.yml \
+            _data/socials.yml \
+            _data/repositories.yml \
+            _bibliography/papers.bib \
+            assets/landing/js/data.js \
+            assets/landing/js/main-20260813-landing-4.js \
+            assets/landing/css/style.css \
+            _config.yml \
+            CV.pdf
+          ls -lh academic-site-baseline.tar.gz
+          sha256sum academic-site-baseline.tar.gz
+      - name: Attach read-only source snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: academic-site-baseline
+          path: academic-site-baseline.tar.gz
+          retention-days: 2
