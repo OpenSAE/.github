@@ -6,6 +6,10 @@
   <strong>Building open foundations for understanding, evaluating, and intervening in neural networks.</strong>
 </p>
 
+<p align="center">
+  <a href="https://huggingface.co/OpenSAE"><strong>🤗 Hugging Face</strong></a>
+</p>
+
 ---
 
 ## Mission
