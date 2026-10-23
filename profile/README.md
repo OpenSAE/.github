@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/OpenSAE/.github/main/opensae_banner.png" alt="OpenSAE — From learned features to faithful explanations" width="100%" />
+  <img src="https://raw.githubusercontent.com/OpenSAE/.github/main/opensae_banner.png" alt="OpenSAE" width="100%" />
 </p>
 
 <p align="center">
@@ -14,40 +14,34 @@
 
 ## Mission
 
-OpenSAE advances the science of how neural networks represent information and how their internal structures shape behavior. We develop theory, methods, and open research tools to make explanations testable and interventions reproducible.
+**Research needs standard infrastructure.**
 
-Sparse autoencoders are a central starting point, connecting our work to broader questions in mechanistic interpretability and representation learning.
+OpenSAE is an open research non-profit organization building shared infrastructure for mechanistic interpretability. We develop reusable tools for understanding models, testing interventions, and evaluating explanations, so researchers can spend less time rebuilding software and more time testing ideas.
 
-## Research Directions
+## Vision
 
-At OpenSAE, we study how neural networks represent information and how those representations shape model behavior. Our research focuses on:
+**Make the tools common. _Keep the insights unique._**
 
-- Understanding what learned features represent and how they are organized within neural networks.
+Model inspection, feature editing, and evaluation should be accessible, reproducible, and reusable across research projects.
 
-- Investigating how individual features and their interactions influence model behavior.
+## SAEBase
 
-- Studying how representations change across inputs and contexts, and what remains consistent.
+**From a learned feature to a controlled experiment.**
 
-- Developing tools and rigorous evaluations to test the reliability of explanations and interventions.
+[**SAEBase**](https://github.com/OpenSAE/SAEBase) is OpenSAE's main software platform for exploring, intervening in, and evaluating LLM representations. It offers an interactive workspace, Python tools, and research workflows.
 
-## Research & Infrastructure
+[**Workspace ↗**](https://atheavenma.github.io/opensae/workspace.html) · [**Python API ↗**](https://atheavenma.github.io/opensae/api.html) · [**Documentation ↗**](https://atheavenma.github.io/opensae/docs.html) · [**Source ↗**](https://github.com/OpenSAE/SAEBase)
 
-- 🧱 [**SAEBase**](https://github.com/OpenSAE/SAEBase)
+## Research
 
-    Research infrastructure for understanding, testing, and modifying SAE features in LLMs.
+**Explanations need evidence.**
 
-- 🧩 [**Behavioral Compositionality of Sparse Autoencoder Representations**](https://github.com/OpenSAE/SAE-Behavioral-Compositionality)
+We study what learned features represent, how they interact, how they change across contexts, and how they influence model behavior.
 
-    Measures how much model behavior depends on interactions among its SAE features.
+- 🧩 [**Behavioral Compositionality of Sparse Autoencoder Representations**](https://github.com/OpenSAE/SAE-Behavioral-Compositionality) — When do combinations of features change model behavior?
+- 🔀 [**Representation Redistribution in Sparse Autoencoders**](https://github.com/OpenSAE/Redistribution-Sensitivity-Score) — How does feature activity change across contexts?
+- 🧭 [**Sparse Autoencoders Do Not Guarantee Local Features**](https://github.com/OpenSAE/SAE-Input-Localization) — When is a learned feature genuinely local?
 
-- 🔀 [**Representation Redistribution in Sparse Autoencoders**](https://github.com/OpenSAE/Redistribution-Sensitivity-Score)
+## Contribute & Collaborate
 
-    Detects consistent shifts in SAE feature activity when the same request is presented differently.
-
-- 🧭 [**Sparse Autoencoders Do Not Guarantee Local Features**](https://github.com/OpenSAE/SAE-Input-Localization)
-
-    Shows that SAE features can look simple while depending on many interacting inputs.
-
-## Opportunities
-
-We share research, code, evaluation protocols, and tools to support an open, rigorous, and reproducible understanding of LLMs. If you're interested in our research and would like to join OpenSAE, please contact us at hma232@wisc.edu.
+We welcome open-source contributions and research collaborations. Explore our repositories, [open an issue](https://github.com/OpenSAE/SAEBase/issues), or [get in touch](https://atheavenma.github.io/opensae/contact.html) at [hma232@wisc.edu](mailto:hma232@wisc.edu).
