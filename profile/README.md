@@ -3,11 +3,11 @@
 </p>
 
 <p align="center">
-  <strong>Building open foundations for understanding, evaluating, and intervening in neural networks.</strong>
+  <strong>Building open foundations for understanding and evaluating LLMs.</strong>
 </p>
 
 <p align="center">
-  <a href="https://huggingface.co/OpenSAE"><strong>🤗 Hugging Face</strong></a>
+  <a href="https://atheavenma.github.io/opensae/index.html"><strong>Official Website</strong></a> · <a href="https://huggingface.co/OpenSAE"><strong>🤗 Hugging Face</strong></a>
 </p>
 
 ---
