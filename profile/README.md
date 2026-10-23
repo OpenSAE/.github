@@ -20,7 +20,7 @@ OpenSAE is an open research non-profit organization building shared infrastructu
 
 ## Vision
 
-**Make the tools common. _Keep the insights unique._**
+**Make the tools common. Keep the insights unique.**
 
 Model inspection, feature editing, and evaluation should be accessible, reproducible, and reusable across research projects.
 
