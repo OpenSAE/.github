@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <strong>Building open foundations for understanding and evaluating LLMs.</strong>
+  <em>Building open foundations for understanding and evaluating LLMs.</em>
 </p>
 
 <p align="center">
