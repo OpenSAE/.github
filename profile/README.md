@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://atheavenma.github.io/opensae/index.html"><strong>🌐 Official Website</strong></a> · <a href="https://huggingface.co/OpenSAE"><strong>🤗 Hugging Face</strong></a>
+  <a href="https://opensae.github.io/"><strong>🌐 Official Website</strong></a> · <a href="https://huggingface.co/OpenSAE"><strong>🤗 Hugging Face</strong></a>
 </p>
 
 ---
@@ -30,7 +30,7 @@ Model inspection, feature editing, and evaluation should be accessible, reproduc
 
 [**SAEBase**](https://github.com/OpenSAE/SAEBase) is OpenSAE's main software platform for exploring, intervening in, and evaluating LLM representations. It offers an interactive workspace, Python tools, and research workflows.
 
-[**Workspace ↗**](https://atheavenma.github.io/opensae/workspace.html) · [**Python API ↗**](https://atheavenma.github.io/opensae/api.html) · [**Documentation ↗**](https://atheavenma.github.io/opensae/docs.html) · [**Source ↗**](https://github.com/OpenSAE/SAEBase)
+[**Workspace ↗**](https://opensae.github.io/workspace.html) · [**Python API ↗**](https://opensae.github.io/api.html) · [**Documentation ↗**](https://opensae.github.io/docs.html) · [**Source ↗**](https://github.com/OpenSAE/SAEBase)
 
 ## Research
 
@@ -44,4 +44,4 @@ We study what learned features represent, how they interact, how they change acr
 
 ## Contribute & Collaborate
 
-We welcome open-source contributions and research collaborations. Explore our repositories, [open an issue](https://github.com/OpenSAE/SAEBase/issues), or [get in touch](https://atheavenma.github.io/opensae/contact.html) at [hma232@wisc.edu](mailto:hma232@wisc.edu).
+We welcome open-source contributions and research collaborations. Explore our repositories, [open an issue](https://github.com/OpenSAE/SAEBase/issues), or [get in touch](https://opensae.github.io/contact.html) at [hma232@wisc.edu](mailto:hma232@wisc.edu).
